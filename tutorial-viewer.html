@@ -16,6 +16,9 @@
   <hr />
 
   {{#dynamicTabs tabs=tabs activeTab=activeTab}}
+    {{#tabContent slug="intTut"}}
+      {{> Template.dynamic template=getContentBintTut}}
+    {{/tabContent}}
     {{#tabContent slug="blaze"}}
       {{> Template.dynamic template=getContentBlaze}}
     {{/tabContent}}

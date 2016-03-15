@@ -1,11 +1,12 @@
 if (Meteor.isClient) {
+  var intTut = TutorialRegistry.tutorials.intermediate;
   var blazeTut = TutorialRegistry.tutorials.blaze;
   var angularTut = TutorialRegistry.tutorials.angular;
   var reactTut = TutorialRegistry.tutorials.react;
 
   FlowRouter.route('/', {
     triggersEnter: [function(context, redirect) {
-      redirect('/tutorial/0/blaze');
+      redirect('/tutorial/0/intermediate');
     }]
   });
 
@@ -25,7 +26,7 @@ if (Meteor.isClient) {
 
   Template.body.helpers({
     stepIndices: function () {
-      return _.range(0, blazeTut.steps.length);
+      return _.range(0, intTut.steps.length);
     },
     stepNumber: function () {
       return this.valueOf() + 1;
@@ -35,20 +36,24 @@ if (Meteor.isClient) {
     },
     tabs: function () {
       return [
-        { name: blazeTut.title, slug: "blaze" },
-        { name: angularTut.title, slug: "angular" },
-        { name: reactTut.title, slug: "react" }
+        { name: intTut.title, slug: "intermediate" }
+        // { name: blazeTut.title, slug: "blaze" },
+        // { name: angularTut.title, slug: "angular" },
+        // { name: reactTut.title, slug: "react" }
       ]
     },
-    getContentBlaze: function () {
-      return blazeTut.steps[parseInt(FlowRouter.getParam("step"), 10)].template;
+    getContentIntermediate function () {
+      return intTut.steps[parseInt(FlowRouter.getParam("step"), 10)].template;
     },
-    getContentReact: function () {
-      return reactTut.steps[parseInt(FlowRouter.getParam("step"), 10)].template;
-    },
-    getContentAngular: function () {
-      return angularTut.steps[parseInt(FlowRouter.getParam("step"), 10)].template;
-    },
+    // getContentBlaze: function () {
+    //   return blazeTut.steps[parseInt(FlowRouter.getParam("step"), 10)].template;
+    // },
+    // getContentReact: function () {
+    //   return reactTut.steps[parseInt(FlowRouter.getParam("step"), 10)].template;
+    // },
+    // getContentAngular: function () {
+    //   return angularTut.steps[parseInt(FlowRouter.getParam("step"), 10)].template;
+    // },
     activeTab: function () {
       return FlowRouter.getParam("slug");
     }
