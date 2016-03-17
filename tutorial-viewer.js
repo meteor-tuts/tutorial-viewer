@@ -42,7 +42,7 @@ if (Meteor.isClient) {
         // { name: reactTut.title, slug: "react" }
       ]
     },
-    getContentIntermediate function () {
+    getContentIntermediate: function () {
       return intTut.steps[parseInt(FlowRouter.getParam("step"), 10)].template;
     },
     // getContentBlaze: function () {
