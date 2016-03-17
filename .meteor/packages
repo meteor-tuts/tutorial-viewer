@@ -6,7 +6,7 @@
 
 autopublish
 insecure
-intermediate-meteor
+
 simple:highlight.js
 templates:tabs
 meteorhacks:flow-router
@@ -26,3 +26,5 @@ random
 ejson
 spacebars
 check
+
+intermediate-meteor
