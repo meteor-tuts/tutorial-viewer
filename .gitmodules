@@ -1,0 +1,3 @@
+[submodule "packages/tut"]
+	path = packages/tut
+	url = https://github.com/meteor-tuts/tut.git
