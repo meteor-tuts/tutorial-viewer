@@ -1,8 +1,8 @@
 if (Meteor.isClient) {
   var intTut = TutorialRegistry.tutorials.intermediate;
-  var blazeTut = TutorialRegistry.tutorials.blaze;
-  var angularTut = TutorialRegistry.tutorials.angular;
-  var reactTut = TutorialRegistry.tutorials.react;
+  // var blazeTut = TutorialRegistry.tutorials.blaze;
+  // var angularTut = TutorialRegistry.tutorials.angular;
+  // var reactTut = TutorialRegistry.tutorials.react;
 
   FlowRouter.route('/', {
     triggersEnter: [function(context, redirect) {
@@ -42,7 +42,7 @@ if (Meteor.isClient) {
         // { name: reactTut.title, slug: "react" }
       ]
     },
-    getContentIntermediate function () {
+    getContentIntermediate: function () {
       return intTut.steps[parseInt(FlowRouter.getParam("step"), 10)].template;
     },
     // getContentBlaze: function () {
